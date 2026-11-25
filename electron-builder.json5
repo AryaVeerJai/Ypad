@@ -1,0 +1,39 @@
+
+{
+  appId: "com.ypad",
+
+  productName: "Ypad",
+
+  artifactName: "Ypad-Setup-${version}.${ext}",
+
+  directories: {
+    output: "release",
+    buildResources: "public"
+  },
+
+  files: [
+    "dist/**/*",
+    "dist-electron/**/*",
+    "package.json"
+  ],
+
+  asar: true,
+
+  win: {
+    target: [
+      {
+        target: "nsis",
+        arch: ["x64"]
+      }
+    ]
+  },
+
+  nsis: {
+    oneClick: false,
+    allowToChangeInstallationDirectory: true,
+    createDesktopShortcut: true,
+    createStartMenuShortcut: true,
+    shortcutName: "Ypad",
+    uninstallDisplayName: "Ypad"
+  }
+}
